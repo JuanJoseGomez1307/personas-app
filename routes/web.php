@@ -40,3 +40,5 @@ Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('de
 Route::post('/departametos', [DepartamentoController::class, 'store'])->name('departamentos.store');
 
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
+
+Route::delete('/departamentos/{departamento}', [DepartamentoController::class, 'destroy'])->name('departamentos.destroy');
