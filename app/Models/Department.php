@@ -10,5 +10,5 @@ class Department extends Model
     use HasFactory;
     protected $table = "tb_departamento";
     protected$primaryKey = "depa_codi";
-    public $timestams = false;
+    public $timestamps = false;
 }
