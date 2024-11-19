@@ -18,7 +18,7 @@ class PaisController extends Controller
         ->join('tb_municipio', 'tb_pais.pais_capi', '=', 'tb_municipio.muni_codi')
         ->select('tb_pais.*', 'tb_municipio.muni_nomb')
         ->get();
-        return view('pais.index', ['paises' => $paises]);
+        return json_encode(['paises' => $paises]);
     }
 
     /**
@@ -48,7 +48,7 @@ class PaisController extends Controller
          ->join('tb_municipio', 'tb_pais.pais_capi', '=', 'tb_municipio.muni_codi')
          ->select('tb_pais.*', 'tb_municipio.muni_nomb')
          ->get();
-         return view('pais.index', ['paises' => $paises]);
+         return json_encode(['paises' => $paises]);
     }
 
     /**
@@ -63,7 +63,7 @@ class PaisController extends Controller
         $municipios =DB::table('tb_municipio')
         ->orderBy('muni_nomb')
         ->get();
-        return view('pais.edit', ['pais'=>$pais, 'municipios'=>$municipios]);
+        return json_encode(['pais'=>$pais, 'municipios'=>$municipios]);
     }
 
     /**
@@ -95,7 +95,7 @@ class PaisController extends Controller
         ->join('tb_municipio','tb_pais.pais_capi','=','tb_municipio.muni_codi')
         ->select('tb_pais.*',"tb_municipio.muni_nomb")
         ->get();
-        return view('pais.index',['paises'=>$paises]);
+        return json_encode(['paises'=>$paises]);
     }
 
     /**
@@ -113,6 +113,6 @@ class PaisController extends Controller
         ->join('tb_municipio','tb_pais.pais_capi','=','tb_municipio.muni_codi')
         ->select('tb_pais.*',"tb_municipio.muni_nomb")
         ->get();
-        return view('pais.index', ['paises'=>$paises]);
+        return json_encode(['paises'=>$paises]);
     }
 }

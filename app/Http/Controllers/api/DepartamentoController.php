@@ -18,7 +18,7 @@ class DepartamentoController extends Controller
         ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
         ->select('tb_departamento.*', 'tb_pais.pais_nomb')
         ->get();
-        return view('departamento.index', ['departamentos' => $departamentos]);
+        return json_encode(['departamentos' => $departamentos]);
     }
 
     /**
@@ -47,7 +47,7 @@ class DepartamentoController extends Controller
         ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
         ->select('tb_departamento.*', 'tb_pais.pais_nomb')
         ->get();
-        return view('departamento.index', ['departamentos' => $departamentos]);
+        return json_encode(['departamentos' => $departamentos]);
     }
 
     /**
@@ -62,7 +62,7 @@ class DepartamentoController extends Controller
         $paises = DB::table('tb_pais')
             ->orderBy('pais_nomb')
             ->get();
-        return view('departamento.edit', ['departamento' => $departamento, 'paises' => $paises]);
+        return json_encode(['departamento' => $departamento, 'paises' => $paises]);
     }
 
     /**
@@ -94,7 +94,7 @@ class DepartamentoController extends Controller
         ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
         ->select('tb_departamento.*', 'tb_pais.pais_nomb')
         ->get();
-        return view('departamento.index', ['departamentos' => $departamentos]);
+        return json_encode(['departamentos' => $departamentos]);
     }
 
     /**
@@ -112,6 +112,6 @@ class DepartamentoController extends Controller
         ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
         ->select('tb_departamento.*', 'tb_pais.pais_nomb')
         ->get();
-        return view('departamento.index', ['departamentos' => $departamentos]);
+        return json_encode(['departamentos' => $departamentos]);
     }
 }

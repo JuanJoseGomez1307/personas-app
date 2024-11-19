@@ -19,7 +19,7 @@ class ComunaController extends Controller
             ->join('tb_municipio', 'tb_comuna.muni_codi', '=', 'tb_municipio.muni_codi')
             ->select('tb_comuna.*', "tb_municipio.muni_nomb")
             ->get();
-        return view('comuna.index', ['comunas'=>$comunas]);
+        return json_encode(['comunas'=>$comunas]);
     }
 
     /**
@@ -49,7 +49,7 @@ class ComunaController extends Controller
             ->select('tb_comuna.*', "tb_municipio.muni_nomb")
             ->get();
 
-        return view('comuna.index', ['comunas'=>$comunas]);
+        return json_encode(['comunas'=>$comunas]);
     }
 
     /**
@@ -64,7 +64,7 @@ class ComunaController extends Controller
         $municipios = DB::table('tb_municipio')
             ->orderBy('muni_nomb')
             ->get();
-        return view('comuna.edit', ['comuna' => $comuna, 'municipios' => $municipios]);
+        return json_encode(['comuna' => $comuna, 'municipios' => $municipios]);
     }
 
     /**
@@ -97,7 +97,7 @@ class ComunaController extends Controller
             ->select('tb_comuna.*', "tb_municipio.muni_nomb")
             ->get();
 
-        return view('comuna.index', ['comunas'=>$comunas]);
+        return json_encode(['comunas'=>$comunas]);
     }
 
     /**
@@ -115,6 +115,6 @@ class ComunaController extends Controller
         ->select('tb_comuna.*', "tb_municipio.muni_nomb")
         ->get();
         
-        return view('comuna.index', ['comunas' => $comunas]);
+        return json_encode(['comunas' => $comunas]);
     }
 }
